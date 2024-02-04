@@ -1,0 +1,55 @@
+<div class="container my-5">
+    <h1 class="mb-3">Add New Groceries</h1>
+    <div class="row">
+        <div class="col-6">
+            <form #form="ngForm" (ngSubmit)="adddata()">
+               
+                <div class="mb-3">
+                    <label for="product" class="form-label">Product</label>
+                    <input type="text" class="form-control" id="product" name="product" [(ngModel)]="addGroceriesRequest.product">
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <input type="text" class="form-control" id="description" name="description" [(ngModel)]="addGroceriesRequest.description">
+
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price</label>
+                    <input type="number" class="form-control" id="price" name="price" [(ngModel)]="addGroceriesRequest.price">
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Image</label>
+                    <input type="text" class="form-control" id="image" name="image" [(ngModel)]="addGroceriesRequest.image">
+                </div>
+                <div class="mb-3">
+                    <label for="quantity" class="form-label">Quantity</label>
+                    <input type="number" class="form-control" id="quantity" name="quantity" [(ngModel)]="addGroceriesRequest.quantity">
+                </div>
+                <div class="mb-3">
+                    <label for="discount" class="form-label">Discount</label>
+                    <input type="number" class="form-control" id="discount" name="discount" [(ngModel)]="addGroceriesRequest.discount">
+                </div>
+                <div class="mb-3">
+                    <label for="weight" class="form-label">Weight</label>
+                    <input type="text" class="form-control" id="weight" name="weight" [(ngModel)]="addGroceriesRequest.weight">
+                </div>
+                <div class="mb-3">
+                    <label for="category" class="form-label">Category</label>
+                    
+
+                    <select name="category"  class="dropdown"  id="category" name="category" [(ngModel)]="addGroceriesRequest.category">
+                        <option value="">Select Category</option>
+                        <option value="fashion">Fashion</option>
+                        <option value="food">Food</option>
+                        <option value="electronics">Electronics</option>
+                      </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+                
+        
+             </form>
+        </div>
+    </div>
+     
+</div>

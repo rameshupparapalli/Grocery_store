@@ -1,0 +1,83 @@
+
+<div class="main">
+    <div class="sub">
+      <div class="sub-images">
+        <div class="images">
+            <img src="{{groceriesDetails.image}}" alt=""></div>
+        <div class="like">
+            <button class="like-button" (click)="toggleLike()">
+                <i class="fas fa-heart" [ngClass]="{'liked': isLiked}"></i>
+              </button>
+        </div>
+      </div>
+     
+    <div class="details-action">
+      <div class="details">
+        <div class="name">
+          <h1>{{groceriesDetails.product}}</h1>
+         </div>
+        <div class="price">
+          <h1><i class="fa-solid fa-indian-rupee-sign"></i> {{groceriesDetails.price}}</h1>
+        </div>
+      </div>
+      <div class="quantity-control">
+        <button class="quantity-btn minus-btn" (click)="decreaseQuantity()">-</button>
+        <input type="number" class="quantity-input" [(ngModel)]="quan" min="1">
+        <button class="quantity-btn plus-btn" (click)="increaseQuantity()">+</button>
+      </div>
+     
+      <div class="cart">
+        <button > <a href="" routerLink="/cart" (click)="addToCart(groceriesDetails)" ><i class="fa-solid fa-cart-shopping"></i></a></button>
+      </div>
+     
+
+    </div>
+     
+    <div class="discount">
+      <p>Flat {{groceriesDetails.discount}}% off</p>
+    </div>
+    <div class="star">
+      <div class="star-rating">
+        <span class="star" *ngFor="let star of stars" [ngClass]="{ 'filled': star <= currentRating }" (click)="rate(star)">&#9733;</span>
+      </div>
+    </div>
+   
+    <div class="back">
+      <button class="btn btn-primary"><a href="" routerLink="/home">Back</a></button>
+    </div>
+      
+      <div class="comment">
+           <form action="">
+                  <input type="text" name="commentText" [(ngModel)]="Comments" placeholder="Enter your Comment">
+                  <button type="submit" (click)="addComment(groceriesDetails)" id="Comment" class="btn btn-primary">Submit</button>
+      
+                  <button type="submit" (click)="Comment(groceriesDetails)" id="Comment" class="btn btn-info">Comments</button>
+             </form>
+
+      </div>
+       
+      <div class="cmds">
+        <div class="sub-container">
+          <h4>Comments</h4>
+          <div class="data" *ngFor="let item of commentsdata">
+            <p class="user">{{item.username}}</p>
+          <p class="com"> * {{item.comment}}</p>
+          </div>
+          
+        </div>
+      </div>
+
+
+    </div>
+
+    </div>
+    
+    
+   
+    <!-- <h1>{{groceriesDetails.description}}</h1> -->
+   
+
+
+
+
+

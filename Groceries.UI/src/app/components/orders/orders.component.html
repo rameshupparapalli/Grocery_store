@@ -1,0 +1,109 @@
+<div class="container-fluid my-5  d-flex  justify-content-center">
+
+    <div class="card card-1">
+
+        <div class="card-header bg-white">
+
+            <div class="media flex-sm-row flex-column-reverse justify-content-between  ">
+
+                <div class="col my-auto"> <h4 class="mb-0">Thanks for your Orders ,<span class="change-color">{{MyOrders}}</span> !</h4> </div>
+
+            </div>
+
+        </div>
+
+        <div class="card-body">
+
+           
+
+            <div class="row" *ngFor="let row of Products">
+
+                <div class="col">
+
+                    <div class="card card-2">
+
+                        <div class="card-body">
+
+                            <div class="media">
+
+                                <div class="sq align-self-center "> <img class="img-fluid  my-auto align-self-center mr-2 mr-md-4 pl-0 p-0 m-0" src="{{row.image}}" width="135" height="135" /> </div>
+
+                                <div class="media-body my-auto text-right">
+
+                                    <div class="row  my-auto flex-column flex-md-row">
+
+                                        <div class="col my-auto"> <h6 class="mb-0"> {{row.product}}</h6>  </div>
+
+                                        <div class="col my-auto"> <small> Quantity: {{row.quantity}}</small></div>
+
+                                        <div class="col my-auto"> <small>Price: {{row.price/row.quantity}}</small></div>
+
+                                        <div class="col my-auto"><h6 class="mb-0">Total: &#8377;{{row.price}}</h6>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <hr class="my-3 ">
+
+                       
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+           
+
+            <div class="row mt-4">
+
+                <div class="col">
+
+                    <div class="row justify-content-between">
+
+                        <div class="flex-sm-col text-right col"> <p class="mb-1"><b>Total</b></p> </div>
+
+                        <div class="flex-sm-col col-auto"> <p class="mb-1">&#8377;{{TotalPrice}}</p> </div>
+
+                    </div>
+
+                    <div class="row justify-content-between">
+
+                        <div class="flex-sm-col text-right col"><p class="mb-1"> <b>Discount</b></p> </div>
+
+                        <div class="flex-sm-col col-auto"><p class="mb-1">&#8377;{{TotalDiscount}}</p></div>
+
+                    </div>
+
+                    <div class="row justify-content-between">
+
+                        <div class="flex-sm-col text-right col"><p class="mb-1"><b>Delivery Charges</b></p></div>
+
+                        <div class="flex-sm-col col-auto"><p class="mb-1">Free</p></div>
+
+                    </div>
+
+                    <div>
+
+                        <a [routerLink]="['/']">Continue Shopping</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+           
+
+        </div>
+
+       
+
+    </div>

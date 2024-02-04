@@ -1,0 +1,25 @@
+input
+{
+    width: 100%;
+    border-radius: 20px;
+
+}
+
+.main {
+    position: relative;
+}
+
+.search-container {
+    position: relative;
+}
+
+.search-container i {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+
+.search-container input {
+    padding-left: 30px; /* Adjust this value based on the icon size and desired spacing */
+}

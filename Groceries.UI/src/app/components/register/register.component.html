@@ -1,0 +1,45 @@
+<div class="main">
+    <div class="sub">
+        <div class="heading">Signup</div>
+        <hr class="first-line">
+        <hr class="second-line">
+        <form [formGroup]="signUpForm">
+            <div class="form-group">
+             <input formControlName="username" type="text" placeholder="Full Name">
+            </div>
+            <small *ngIf="signUpForm.controls['username'].dirty && signUpForm.hasError('required','username')" class="text-danger">*full name is Required</small>
+            <div class="form-group">
+                <input formControlName="email" type="email" placeholder="Email">
+            </div>
+            
+            <small class="text-danger" *ngIf="signUpForm.controls['email'].dirty && signUpForm.hasError('required','email')">*Email is Required</small>
+            <div class="form-group">
+                <input formControlName="phone" type="text" placeholder="Phone Number">
+            </div>
+            <!-- <small *ngIf="signUpForm.controls['phone'].dirty && signUpForm.hasError('required','phone')" class="text-danger">*Phone number is required</small> -->
+            <small class="text-danger" *ngIf="signUpForm.controls['phone'].dirty && signUpForm.hasError('required', 'phone')">*Phone number is required</small>
+              <small class="text-danger" *ngIf="signUpForm.controls['phone'].dirty && signUpForm.hasError('pattern', 'phone')">*Invalid phone number format</small>
+
+            <div class="form-group">
+                <input formControlName="password" type="password" placeholder="Password">
+            </div>
+            <!-- <small *ngIf="signUpForm.controls['password'].dirty && signUpForm.hasError('required','password')" class="text-danger">*password is required</small> -->
+            <small class="text-danger" *ngIf="signUpForm.controls['password'].dirty && signUpForm.hasError('required', 'password')">*Password is required</small>
+             <small class="text-danger" *ngIf="signUpForm.controls['password'].dirty && signUpForm.hasError('minlength', 'password')">*Password must be at least 8 characters long</small>
+            <div class="form-group">
+                <input  type="password" placeholder="Confirm Password">
+            </div>
+            <!-- <small class="text-danger" *ngIf="signUpForm.controls['confirmpassword'].dirty && signUpForm.hasError('required','confirmpassword')">*password is required</small> -->
+            <small class="text-danger" *ngIf="signUpForm.controls['password'].dirty && signUpForm.hasError('required', 'password')">*Password is required</small>
+<small class="text-danger" *ngIf="signUpForm.controls['password'].dirty && signUpForm.hasError('minlength', 'password')">*Password must be at least 8 characters long</small>
+<small class="text-danger" *ngIf="signUpForm.controls['confirmpassword'].dirty && signUpForm.controls['confirmpassword'].hasError('passwordMismatch')">*Passwords do not match</small>
+            <div class="sub-log">
+                <button type="submit" class="button" (click)="onSignup()">Signup</button>
+            </div>
+            <div class="acc">
+                <p>Already Have an account <a href="" routerLink="/login">Login</a> </p>
+
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,58 @@
+
+<div class="sub-nav">
+  
+  <div class="serch">
+   
+  <app-search (searchTextChanged)="onSearchTextEntered($event)"></app-search>
+  </div>
+
+ 
+  
+</div>
+<div class="table-data">
+  <table  class="table table-striped table-bordered" *ngIf="data && data.length > 0"  >
+    <thead style="background-color: black; color: #fff;">
+      <th>Product</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Image</th>
+      <ng-container *ngIf="role ==='admin'">
+        <th>Actions</th>
+      </ng-container>
+      
+    </thead>
+    <tbody >
+     
+      <ng-container *ngFor="let item of data | paginate:{
+        itemsPerPage:tableSize,
+        currentPage:page,
+         totalItems:count}; let i= index">
+        <tr *ngIf="searchText === '' || item.product.toLowerCase().includes(searchText)" [routerLink]="['/details',item.id,value]">
+
+          <td  (click)="postdata(item.id)">{{item.product}}</td>
+          <td  (click)="postdata(item.id)">{{item.description}}</td>
+          <td  (click)="postdata(item.id)"><i class="fa-solid fa-indian-rupee-sign"></i>{{item.price}}</td>
+          <td  (click)="postdata(item.id)"><img src="{{item.image}}" alt=""></td>
+          <ng-container *ngIf="role ==='admin'">
+            <td >
+              <button [routerLink]="['/edit', item.id]" class="btn btn-primary">Edit</button>
+              <button type="button" class="btn btn-danger" (click)="deleteGroceries(item.id)">Delete</button>
+            </td>
+          </ng-container>
+           
+        </tr>
+      </ng-container>
+      
+    </tbody>
+  </table>
+<div class="pagination">
+  <pagination-controls
+  previousLabel="Prev"
+  nextLabel="Next"
+  (pageChange)="onTableDataChange($event)"></pagination-controls>
+</div>
+
+
+  <p *ngIf="!data || data.length<=0"> No Data Found</p>
+</div>
+

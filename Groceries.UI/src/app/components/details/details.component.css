@@ -1,0 +1,288 @@
+
+.main
+{   display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    margin: auto;
+}
+
+.cmds
+
+{
+  width: 80%;
+}
+.data{
+  background-color:azure;
+ 
+ padding: 20px ;
+  margin: 5px;
+  border-radius: 20px;
+}
+.sub{
+   
+    width: 80%;
+    /* height: 100%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    margin: auto;
+}
+.sub-images
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.user{
+  font-size: 20px;
+  font-weight: bold;
+}
+.com{
+  font-size: 18px;
+  font-weight: 400;
+  margin-left: 3rem;
+}
+.like{
+    
+    margin-left: 100px;
+    height: 50px;
+    width: 50px;
+    background-color: #fff;
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+
+    
+}
+.like-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .like-button i {
+    color: gray;
+    font-size: 24px;
+  }
+  
+  .like-button i.liked {
+    color: red;
+  }
+.heart-icon {
+
+    width: 40px; /* Adjust the width to fit your design */
+    height: 40px; /* Adjust the height to fit your design */
+  }
+.heart-icon i{
+    background-color: aqua;
+}
+
+i{
+    font-size: 23px;
+    margin-right: 3px;
+}
+img{
+    top:0;
+    width:250px;
+    height:250px;
+}
+.name {
+
+    width: 100%;
+    margin-left: 3rem;
+}
+.price 
+{
+    width: 100%;
+    margin-left: 3rem;
+}
+.name h1{
+    font-size: 20px;
+}
+.price h1
+{
+   font-size: 30px;
+}
+.details-action
+{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+  }
+  
+  .quantity-btn {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: #f0f0f0;
+    cursor: pointer;
+  }
+  
+  .quantity-input {
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .discount{
+    width: 70%;
+    
+  }
+  .star{
+    width: 70%;
+    
+  }
+  .star-rating {
+    
+
+    display: inline-block;
+    font-size: 24px;
+    color: #ccc;
+    cursor: pointer;
+  }
+  
+  .star {
+    transition: color 0.3s;
+    font-size: 2rem;
+  }
+  
+  .star.filled {
+    color: gold;
+  }
+  a{
+    text-decoration: none;
+    color: black;
+  }
+  .comment{
+    width:100%;
+    text-align: center;
+    margin: 30px;
+    justify-content: center;
+    align-items: center;
+  }
+  form {
+  
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+  input{
+    width: 50%;
+    border-radius: 30px;
+    margin: 20px;
+  }
+  button{
+    border-radius: 10px;
+    margin: 25px;
+    
+  }
+ 
+
+  
+  @media (max-width: 768px) {
+    .main {
+      height: auto;
+      padding: 20px;
+    }
+  
+    .cmds {
+      width: 100%;
+    }
+    
+    .data {
+      margin: 10px;
+      border-radius: 10px;
+    }
+  
+    .sub {
+      width: 100%;
+      margin: auto;
+    }
+  
+    .sub-images {
+      flex-direction: column;
+    }
+  
+    .user {
+      font-size: 16px;
+    }
+  
+    .com {
+      font-size: 14px;
+      margin-left: 1rem;
+    }
+  
+    .like {
+      margin-left: 50px;
+      height: 40px;
+      width: 40px;
+    }
+  
+    .like-button i {
+      font-size: 20px;
+    }
+  
+    img {
+      width: 100%;
+      height: auto;
+    }
+  
+    .name h1 {
+      font-size: 16px;
+    }
+  
+    .price h1 {
+      font-size: 24px;
+    }
+  
+    .details-action {
+      flex-direction: column;
+      margin-top: 20px;
+    }
+  
+    .quantity-control {
+      margin-bottom: 10px;
+    }
+  
+    .quantity-input {
+      width: 40px;
+    }
+  
+    .discount {
+      width: 100%;
+    }
+  
+    .star {
+      width: 100%;
+    }
+    
+    .comment {
+      margin: 10px;
+    }
+    
+    input {
+      width: 100%;
+      margin: 10px;
+    }
+  
+    button {
+      margin: 15px;
+    }
+  }
